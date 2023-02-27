@@ -16,6 +16,7 @@ def contains_char(word: str, character: str) -> bool:  #have to return True or F
                 return False
             else:
                 idx_word = idx_word + 1  #adding 1 to index to go back to top of while loop
+    return False
             
 def emojified(guess: str, secret: str) -> str:
     """Creating the iconic wordle emoji string for correct, incorrect, and partly correct letters"""
@@ -45,6 +46,7 @@ def input_guess(input_length: int) -> str:
             return input_word
         else:  #input is not the correct length
             input_word = input(f"That wasn't {input_length} chars! Try again: ")
+    return input_word
 
 def main() -> None:
     """The entrypoint of the program and main game loop"""
