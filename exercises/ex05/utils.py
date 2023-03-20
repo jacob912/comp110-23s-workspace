@@ -2,6 +2,7 @@
 
 __author__ = "730463543"
 
+
 def only_evens(list_nums: list[int]) -> list[int]:
     """Function that returns only the even numbers from a list given to it."""
     list_idx: int = 0
@@ -17,6 +18,7 @@ def only_evens(list_nums: list[int]) -> list[int]:
     else:
         return return_list
     
+
 def concat(list1: list[int], list2: list[int]) -> list[int]:
     """Function that takes in two lists of integers and returns a list that combines the two."""
     list_idx: int = 0
@@ -30,7 +32,9 @@ def concat(list1: list[int], list2: list[int]) -> list[int]:
         list_idx += 1
     return combined_list
 
+
 def sub(list_nums: list[int], start_idx: int, end_idx: int) -> list[int]:
+    """Generate a list that is a subset of the given list between the two indexes (end idx not inclusive)."""
     current_idx: int = 0
     return_list: list[int] = list()
     if len(list_nums) == 0 or start_idx >= len(list_nums) or end_idx <= 0:
