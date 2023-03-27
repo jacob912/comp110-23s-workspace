@@ -1,7 +1,7 @@
 """Practice with dictionaries"""
 
 ice_cream: dict[str, int] = {'chocolate': 12, 'vanilla': 8, 'strawberry': 5}  #can use single or double quotes
-
+print(len(ice_cream))
 #Adding
 ice_cream["mint"] = 3
 print("After adding mint:")
