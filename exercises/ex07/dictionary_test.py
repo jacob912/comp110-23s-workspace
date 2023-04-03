@@ -7,6 +7,7 @@ from exercises.ex07.dictionary import favorite_color
 from exercises.ex07.dictionary import count
 import pytest
 
+
 def test_letter_dict() -> None:
     """Testing a regular dictionary being inputted that only contains letters."""
     test_dict: dict[str, str] = {'a': 'b', 'b': 'c', 'c': 'd'}
@@ -44,10 +45,16 @@ def test_all_one_color() -> None:
     assert favorite_color(test_dict) == "red"
 
 
+def test_half_one_color_half_another() -> None:
+    """Testing where the inputted dictionary's people have equal amounts of favorite color."""
+    test_dict: dict[str, str] = {'Jacob': 'blue', 'Jon': 'blue', 'Mary': 'red', 'Josh': 'red'}
+    assert favorite_color(test_dict) == "blue"
+
+
 def test_all_different() -> None:
     """Testing where all the responses of favorite color are different - Edge case."""
-    test_dict: dict[str, str] = {'Jacob': 'blue', 'Jon': 'red', 'Mary': 'green', 'Josh': 'yellow'}
-    assert favorite_color(test_dict) == "blue"
+    test_dict: dict[str, str] = {'Jacob': 'red', 'Jon': 'blue', 'Mary': 'green', 'Josh': 'yellow'}
+    assert favorite_color(test_dict) == "red"
 
 
 def test_reg_list() -> None:
@@ -56,13 +63,13 @@ def test_reg_list() -> None:
     assert count(test_list) == {"UNC": 3, "Duke": 1, "App": 1, "UNCC": 1}
 
 
-def test_all_different() -> None:
+def test_all_different2() -> None:
     """Testing when the inputted list is all different strings."""
     test_list: list[str] = ["UNC", "Duke", "State", "App", "UNCC"]
     assert count(test_list) == {"UNC": 1, "Duke": 1, "State": 1, "App": 1, "UNCC": 1}
 
 
-def test_all_same() -> None:
+def test_all_same2() -> None:
     """Testing when the inputted list is all the same string - Edge case."""
     test_list: list[str] = ["UNC", "UNC", "UNC", "UNC", "UNC", "UNC", "UNC"]
     assert count(test_list) == {"UNC": 7}
